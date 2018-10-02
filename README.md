@@ -3,43 +3,6 @@
 MATLAB toolbox that provides Transcendental Functions, Integration Functions and Differentiation Functions. Also includes interpolation and datafit functions and a system of linear equations solver.
 </p>
 
-# Transcendental Functions
-	function: mysin(x)
-		This function uses the taylor series expansion of the sin function to return sin
-		accurate to 8 decimal places.
-		Sample: a = mysin(pi/2)
-			>>>a = 1.00000
-
-	function: mycos(x)
-		This uses mysin() and a minor adjustment to get the cos function evaluated at x.
-		Sample: a = mycos(pi/2)
-			>>>a = 1.0348e-011
-
-	function: mytan(x)
-		This uses mysin() and mycos() to get the tan function evaluated at x.
-		Sample: a = mytan(pi/2)
-			>>>a = 9.6635e+010
-
-	function: mysec(x)
-		This uses mycos() to get the sec function evaluated at x.
-		Sample: a = mysec(pi/2)
-			>>>a = 9.6635e+010 
-
-	function: mycsc(x)
-		This uses mysin() to get the csc function evaluated at x.
-		Sample: a = mycsc(pi/2)
-			>>>a = 1.0000
-
-	function: mycot(x)
-		This uses mytan() to get the cot function evaluated at x.
-		Sample: a = mycot(pi/2)
-			>>>a = 1.0348e-011
-
-	function: myexp(x)
-		This evaluates the exponential function e^x evaluated at x.
-		Sample: a = myexp(10)
-			>>>a = 2.2026e+004
-
 # Integration Functions
 	function: simpint(f,a,b,oy) 
 		This function uses adaptive quadrature to approximate the
@@ -79,4 +42,92 @@ MATLAB toolbox that provides Transcendental Functions, Integration Functions and
 		containing the coefficients of the polynomial after the integral is applied.
 		Sample: c = indefintegral([2 1 -3])
 			>>>c = 0.66667   0.50000  -3.00000   0.00000
+
+# Transcendental Functions
+	function: mysin(x)
+		This function uses the taylor series expansion of the sin function to return sin
+		accurate to 8 decimal places.
+		Sample: a = mysin(pi/2)
+			>>>a = 1.00000
+
+	function: mycos(x)
+		This uses mysin() and a minor adjustment to get the cos function evaluated at x.
+		Sample: a = mycos(pi/2)
+			>>>a = 1.0348e-011
+
+	function: mytan(x)
+		This uses mysin() and mycos() to get the tan function evaluated at x.
+		Sample: a = mytan(pi/2)
+			>>>a = 9.6635e+010
+
+	function: mysec(x)
+		This uses mycos() to get the sec function evaluated at x.
+		Sample: a = mysec(pi/2)
+			>>>a = 9.6635e+010 
+
+	function: mycsc(x)
+		This uses mysin() to get the csc function evaluated at x.
+		Sample: a = mycsc(pi/2)
+			>>>a = 1.0000
+
+	function: mycot(x)
+		This uses mytan() to get the cot function evaluated at x.
+		Sample: a = mycot(pi/2)
+			>>>a = 1.0348e-011
+
+	function: myexp(x)
+		This evaluates the exponential function e^x evaluated at x.
+		Sample: a = myexp(10)
+			>>>a = 2.2026e+004
+
+#Interpolation, Datafit, System of Linear Equations Functions
+	*Interpolation, Datafit, System of Linear Equations Functions*
+
+	function: linearsolver(A,b)
+		This function solves systems of linear equations. ->  Ac = b   (solves for c)
+		It takes the coefficients matrix A (the left part of the system of equations), vector b, the
+		right part after the equals sign and it solves for c. This function calls gaussbacksolve() to
+		perform gaussian elimination to solve the system. This function returns "c" as a vector.
+		Vector b has to be a column* vector.
+		Sample:	c = linearsolver([1 -3 3;5 3 1; 2 2 2],[22 45 12]')
+			>>>c=
+					12.1000
+					-4.7000
+					-1.4000
+		
+	function: gaussbacksolve(A)
+		This function performs gaussian elimination with pivoting and backsolve on an augmented
+		matrix A. Please make sure that the system is linearly independent. It returns matrix c
+		after performing gaussian elimination with pivoting and backsolve. 
+		Sample: A = gaussbacksolve([3 12 1 2.36; 12 0 2 5.26; 0 2 3 2.77])
+			>>>A = 
+					12.00000    0.00000    2.00000    0.29000
+				 	 0.00000   12.00000    0.50000    0.05000
+				 	 0.00000    0.00000    2.91667    0.89000
+
+
+	function: interpolant(dx,dy)
+		This function returns the coefficients of the polynomial interpolant for the data points
+		dx and dy. It uses the linearsolver() function to solve for the coefficients within the
+		interpolant. 
+		Sample: 
+			>>>dx = linspace(0,3,5);
+			>>>dy = sin(dx);
+			>>>c = interpolant(dx',dy');
+		 	>>>c =   0.03783
+				-0.23718				
+				 0.05957			
+				 0.98163
+				 0.00000				
+					
+	function: datafit(dx,dy,n)
+		This function returns the n coefficients of the least squares polynomial of n-terms
+		for the data points dx and dy. If one desires a 3rd-degree polynomial, set n = 4.
+		In general, a k degree polynomial needs to have n set to n = k+1. The best datafit
+		least squares polynomial generally has n set to half of the number of data points. 
+		Sample:
+			dx = linspace(0,3,5)
+			dy = sin(dx)
+			c = datafit(dx,dy,3) 2nd degree polynomial
+
 
