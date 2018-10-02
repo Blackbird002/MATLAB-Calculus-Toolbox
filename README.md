@@ -3,7 +3,8 @@
 MATLAB toolbox that provides Transcendental Functions, Integration Functions and Differentiation Functions. Also includes interpolation and datafit functions and a system of linear equations solver.
 </p>
 
-<h1>Integration Functions</h1>
+## Integration Functions
+```
 	function: simpint(f,a,b,oy) 
 		This function uses adaptive quadrature to approximate the
 		integral of a function f(x) using static quadrature rules
@@ -42,8 +43,10 @@ MATLAB toolbox that provides Transcendental Functions, Integration Functions and
 		containing the coefficients of the polynomial after the integral is applied.
 		Sample: c = indefintegral([2 1 -3])
 			>>>c = 0.66667   0.50000  -3.00000   0.00000
+```
 
-<h1>Transcendental Functions</h1>
+## Transcendental Functions
+```
 	function: mysin(x)
 		This function uses the taylor series expansion of the sin function to return sin
 		accurate to 8 decimal places.
@@ -79,10 +82,10 @@ MATLAB toolbox that provides Transcendental Functions, Integration Functions and
 		This evaluates the exponential function e^x evaluated at x.
 		Sample: a = myexp(10)
 			>>>a = 2.2026e+004
+```
 
-<h1>Interpolation, Datafit, System of Linear Equations Functions</h1>
-	*Interpolation, Datafit, System of Linear Equations Functions*
-
+## Interpolation, Datafit, System of Linear Equations Functions
+```
 	function: linearsolver(A,b)
 		This function solves systems of linear equations. ->  Ac = b   (solves for c)
 		It takes the coefficients matrix A (the left part of the system of equations), vector b, the
@@ -129,5 +132,5 @@ MATLAB toolbox that provides Transcendental Functions, Integration Functions and
 			dx = linspace(0,3,5)
 			dy = sin(dx)
 			c = datafit(dx,dy,3) 2nd degree polynomial
-
+```
 
