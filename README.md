@@ -80,7 +80,7 @@ MATLAB toolbox that provides Transcendental Functions, Integration Functions and
 		Sample: a = myexp(10)
 			>>>a = 2.2026e+004
 
-#Interpolation, Datafit, System of Linear Equations Functions
+#Interpolation & Datafit & System of Linear Equations Functions
 	*Interpolation, Datafit, System of Linear Equations Functions*
 
 	function: linearsolver(A,b)
