@@ -38,4 +38,7 @@ MATLAB toolbox that provides Transcendental Functions, Integration Functions and
 	function: myexp(x)
 		This evaluates the exponential function e^x evaluated at x.
 		Sample: a = myexp(10)
-			>>>a = 2.2026e+004	
+			>>>a = 2.2026e+004
+
+# Integration Functions
+
