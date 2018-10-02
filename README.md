@@ -4,7 +4,6 @@ MATLAB toolbox that provides Transcendental Functions, Integration Functions and
 </p>
 
 # Transcendental Functions
-<p>
 	function: mysin(x)
 		This function uses the taylor series expansion of the sin function to return sin
 		accurate to 8 decimal places.
@@ -39,5 +38,4 @@ MATLAB toolbox that provides Transcendental Functions, Integration Functions and
 	function: myexp(x)
 		This evaluates the exponential function e^x evaluated at x.
 		Sample: a = myexp(10)
-			>>>a = 2.2026e+004
-</p>	
+			>>>a = 2.2026e+004	
