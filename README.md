@@ -41,4 +41,42 @@ MATLAB toolbox that provides Transcendental Functions, Integration Functions and
 			>>>a = 2.2026e+004
 
 # Integration Functions
+	function: simpint(f,a,b,oy) 
+		This function uses adaptive quadrature to approximate the
+		integral of a function f(x) using static quadrature rules
+		on adaptive subintervals of the integration domain. This 
+		one uses Simpson's rule and it evaluates the definite 
+		integral. (Area under the curve) The function is passed into the function
+		as a anonymous function and it's stored as "f". The integration bounds
+		go from "a" to "b". The old y values go into "oy", which is used during 
+		computation. 
+		Sample: a = simpint(@(x) sin(x),0,pi)
+			>>>a = 2.0000
+
+	function: trapint(f,a,b,oy) 
+		This function uses adaptive quadrature to approximate the
+		integral of a function f(x) using static quadrature rules
+		on adaptive subintervals of the integration domain. This 
+		one uses the trapeziod rule and it evaluates the definite 
+		integral. (Area under the curve) The function is passed into the function
+		as a anonymous function and it's stored as "f". The integration bounds
+		go from "a" to "b". The old y values go into "oy", which is used during 
+		computation. 
+		Sample: a = trapint(@(x) sin(x),0,pi)
+			>>>a = 2
+
+	function: defintegral(f,a,b,'type')
+		This function calls either simpint() or trapint() depending on what is
+		passed into the 'type' variable. Choice are: 'simp' or 'trap'. If a 
+		type is not specified, simpint() will be chosen by default. This function
+		evaluates the definite integral of f(x).
+		Sample: a = defintegral(@(x) cos(x),0,pi,'simp')
+			>>>a = 1.1626e-016
+
+	function: indefintegral(c)
+		This function finds the indefinite integral of a polynomial* with coefficients
+		stored in the vector c. The constant of integration is 0. A vector is returned
+		containing the coefficients of the polynomial after the integral is applied.
+		Sample: c = indefintegral([2 1 -3])
+			>>>c = 0.66667   0.50000  -3.00000   0.00000
 
