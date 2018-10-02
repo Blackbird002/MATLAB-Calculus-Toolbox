@@ -3,7 +3,7 @@
 MATLAB toolbox that provides Transcendental Functions, Integration Functions and Differentiation Functions. Also includes interpolation and datafit functions and a system of linear equations solver.
 </p>
 
-# Integration Functions
+<h1>Integration Functions</h1>
 	function: simpint(f,a,b,oy) 
 		This function uses adaptive quadrature to approximate the
 		integral of a function f(x) using static quadrature rules
@@ -43,7 +43,7 @@ MATLAB toolbox that provides Transcendental Functions, Integration Functions and
 		Sample: c = indefintegral([2 1 -3])
 			>>>c = 0.66667   0.50000  -3.00000   0.00000
 
-# Transcendental Functions
+<h1>Transcendental Functions</h1>
 	function: mysin(x)
 		This function uses the taylor series expansion of the sin function to return sin
 		accurate to 8 decimal places.
@@ -80,7 +80,7 @@ MATLAB toolbox that provides Transcendental Functions, Integration Functions and
 		Sample: a = myexp(10)
 			>>>a = 2.2026e+004
 
-#Interpolation & Datafit & System of Linear Equations Functions
+<h1>Interpolation, Datafit, System of Linear Equations Functions</h1>
 	*Interpolation, Datafit, System of Linear Equations Functions*
 
 	function: linearsolver(A,b)
